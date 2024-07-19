@@ -1,0 +1,52 @@
+main {
+  margin-left: 317px;
+  border: 1px solid rgb(59, 60, 64);
+  border-top: none;
+  border-bottom: none;
+  width: 598px;
+  height: 100vh;
+}
+
+.topbar {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 598px;
+  height: 53px;
+  background-color: black;
+  border-bottom: 1px solid rgb(59, 60, 64);
+}
+
+.topbar a {
+  display: flex;
+  font-size: 15px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  color: rgb(101, 102, 107);
+  transition: 0.15s;
+  cursor: pointer;
+}
+
+.topbar span {
+  margin-left: -7px;
+}
+
+#current-title {
+  color: white;
+  font-weight: bold;
+}
+
+.current-sign {
+  position: absolute;
+  bottom: 0;
+  margin-left: -7px;
+  background-color: rgb(29, 155, 240);
+  width: 56px;
+  height: 4.2px;
+  border-radius: 20px;
+}
+
+.topbar a:hover {
+  background-color: rgb(67, 67, 67);
+}

@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>X</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
+  <link rel="stylesheet" href="styles/main.css">
   <link rel="icon" href="img/favicon.jpg">
 </head>
 <body>
@@ -21,11 +23,11 @@
       
       <!-- Button lists generated with JS -->
        <div class="button-lists"></div>
-      
-       <button id="post-button">
+       <button id="post-button" onclick="location.href=`https:/x.com/compose/post`">
         Post
        </button>
       
+       <!-- NO TOOLTIP YET FOR ADD AND LOGOUT -->
        <button id="profile-button">
           <img class="profile-picture" src="img/profile-picture.jpg">
           <div class="user-info">
@@ -38,6 +40,19 @@
        </button>
     </div>
    </section>
+
+   <!-- The main part containing both the middle and right sections -->
+   <main>
+    <div class="topbar">
+      <a>
+        <span id="current-title">For you</span>
+        <div class="current-sign"></div>
+      </a>
+      <a>
+        <span>Following</span>
+      </a>
+    </div>
+   </main>
    <script src="scripts.js"></script>
 </body>
 </html>
