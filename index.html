@@ -28,29 +28,30 @@
        </button>
       
        <!-- NO TOOLTIP YET FOR ADD AND LOGOUT -->
-       <button id="profile-button">
-          <img class="profile-picture" src="img/profile-picture.jpg">
-          <div class="user-info">
-            <div class="x-name"><strong>Ethan Welhan</strong> 
-              <img class="private-icon" src="img/x-private.png">
-            </div>
-            <div class="x-user">@newelhan</div>
+        <button id="profile-button">
+        <img class="profile-picture" src="img/profile-picture.jpg">
+        <div class="user-info">
+          <div class="x-name"><strong>Ethan Welhan</strong> 
+            <img class="private-icon" src="img/x-private.png">
           </div>
-          <img class="triple-dots" src="img/x-tripledots.png">
-       </button>
+          <div class="x-user">@newelhan</div>
+        </div>
+        <img class="triple-dots" src="img/x-tripledots.png">
+      </button>
     </div>
    </section>
 
    <!-- The main part containing both the middle and right sections -->
    <main>
     <div class="topbar">
-      <a>
-        <span id="current-title">For you</span>
-        <div class="current-sign"></div>
-      </a>
-      <a>
-        <span>Following</span>
-      </a>
+      <div class="topbar-tab foryou-tab">
+        <span class="foryou-title">For you</span>
+        <div class="foryou-current"></div>
+      </div>
+      <div class="topbar-tab following-tab">
+        <span class="following-title">Following</span>
+        <div class="following-current"></div>
+      </div>
     </div>
    </main>
    <script src="scripts.js"></script>
