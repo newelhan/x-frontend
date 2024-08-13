@@ -134,6 +134,13 @@
 }
 
 /* Buttons below the list */
+.bottom-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 22.5vh;
+}
+
 #post-button {
   display: block;
   background-color: rgb(29, 155, 240);
@@ -165,6 +172,10 @@
   font-family: var(--twitter-font);
   font-size: 17px;
   color: white;
+}
+
+#profile-button:active {
+  background-color: rgb(40, 40, 40);
 }
 
 .profile-picture {
@@ -205,4 +216,68 @@
 
 .triple-dots {
   width: 16px;
+}
+
+.profile-button-tooltip {
+  position: fixed;
+  z-index: 999;
+  left: 21px;
+  bottom: 73px;
+  width: 300px;
+  height: 112px;
+  border-radius: 15px;
+  background-color: black;
+  box-shadow: 0px 0px 10px 0.3px rgb(81, 81, 81);
+  visibility: hidden;
+}
+
+/* Arrow Below */
+.profile-button-tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: -17px;
+  left: 149.3px;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: rgba(69, 69, 69, 0.3) transparent transparent transparent;
+  z-index: 77;
+}
+
+/* Arrow's shadow */
+.profile-button-tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 7px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+  z-index: 100;
+}
+
+.profile-button-flexbox {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profile-button-flexbox div {
+  font-family: var(--twitter-font);
+  font-weight: bold;
+  padding-left: 16px;
+  width: 100% - 16px;
+  height: 44px;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.profile-button-flexbox div:hover  {
+  background-color: rgb(20, 20, 25);
+  cursor: pointer;
 }

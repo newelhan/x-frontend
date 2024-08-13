@@ -3,57 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>X</title>
+  <title>Home / X</title>
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/sidebar.css">
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="icon" href="img/favicon.jpg">
+  <link rel="icon" href="img/favicon.png">
 </head>
 <body>
-  <!-- Creating the sidebar first -->
-   <section class="sidebar">
-    <div class="sidebar-contents">
-
-      <!-- Logo -->
-      <div class="x-button-container">
-        <button class="x-button">
-          <img class="x-logo" src="img/x-logo.png">
-        </button>
-      </div>
-      
-      <!-- Button lists generated with JS -->
-       <div class="button-lists"></div>
-       <button id="post-button" onclick="location.href=`https:/x.com/compose/post`">
-        Post
-       </button>
-      
-       <!-- NO TOOLTIP YET FOR ADD AND LOGOUT -->
-        <button id="profile-button">
-        <img class="profile-picture" src="img/profile-picture.jpg">
-        <div class="user-info">
-          <div class="x-name"><strong>Ethan Welhan</strong> 
-            <img class="private-icon" src="img/x-private.png">
-          </div>
-          <div class="x-user">@newelhan</div>
+   <div class="wrapper">
+    <section class="sidebar">
+      <div class="sidebar-contents">
+        
+        <!-- Button logo -->
+        <div class="x-button-container">
+          <button class="x-button" onclick="location.href=`https:/x.com/home`">
+            <img class="x-logo" src="img/x-logo.png">
+          </button>
         </div>
-        <img class="triple-dots" src="img/x-tripledots.png">
-      </button>
-    </div>
-   </section>
 
-   <!-- The main part containing both the middle and right sections -->
-   <main>
-    <div class="topbar">
-      <div class="topbar-tab foryou-tab">
-        <span class="foryou-title">For you</span>
-        <div class="foryou-current"></div>
+        <!-- Buttons created with JS -->
+         <div class="button-lists"></div>
+
+         <!-- Buttons below the list -->
+         <div class="bottom-buttons">
+          <button id="post-button" onclick="location.href=`https:/x.com/compose/post`">
+            Post
+          </button>
+          <button id="profile-button">
+            <img class="profile-picture" src="img/profile-picture.jpg">
+            <div class="user-info">
+              <div class="x-name"><strong>Ethan Welhan</strong> 
+                <img class="private-icon" src="img/x-private.png">
+              </div>
+              <div class="x-user">@newelhan</div>
+            </div>
+            <img class="triple-dots" src="img/x-tripledots.png">
+          </button>
+          <!-- Tooltip for profile button-->
+           <div class="profile-button-tooltip">
+            <div class="profile-button-flexbox">
+              <div>Add an existing account</div>
+              <div>Log out @newelhan</div>
+            </div>
+           </div>
+        </div>
       </div>
-      <div class="topbar-tab following-tab">
-        <span class="following-title">Following</span>
-        <div class="following-current"></div>
+     </section>
+
+     <main>
+      <div class="topbar">
+        <div class="topbar-tab foryou-tab">
+          <span class="foryou-title">For you</span>
+          <div class="foryou-current"></div>
+        </div>
+        <div class="topbar-tab following-tab">
+          <span class="following-title">Following</span>
+          <div class="following-current"></div>
+        </div>
       </div>
-    </div>
-   </main>
-   <script src="scripts.js"></script>
+
+      <div class="post-section">
+        <div class="input-container">
+          <a href="https://x.com/newelhan" target="_blank">
+            <img class="post-profile" src="img/profile-picture.jpg">
+          </a>
+          <input class="post-text" type="text" placeholder="What is happening?!">
+        </div>
+      </div>
+     </main>
+   </div>
+
+   <!-- Using GSAP for smoother X animations -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+   <script src="scripts/sidebar.js"></script>
+   <script src="scripts/main.js"></script>
 </body>
 </html>
