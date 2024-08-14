@@ -1,6 +1,7 @@
 // Use JS to auto generate the SIDEBAR buttons cause i'm lazy
-sidebarButtons = ['home', 'explore', 'notifications', 'messages', 'grok', 'communities', 'profile', 'more']
+const sidebarButtons = ['home', 'explore', 'notifications', 'messages', 'grok', 'communities', 'profile', 'more']
 
+// FIX THE LOCATION LATER !!
 sidebarButtons.forEach(name => {
   document.querySelector('.button-lists').innerHTML += `<div class="sidebar-buttons">
         <button onclick="location.href='https://x.com/${name}'">

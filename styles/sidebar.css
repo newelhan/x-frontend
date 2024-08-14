@@ -1,5 +1,5 @@
 .sidebar {
-  background-color: black;
+  background-color: rgb(38, 38, 38);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -231,7 +231,7 @@
   visibility: hidden;
 }
 
-/* Arrow Below */
+/* Arrow's shadow */
 .profile-button-tooltip::before {
   content: "";
   position: absolute;
@@ -244,7 +244,7 @@
   z-index: 77;
 }
 
-/* Arrow's shadow */
+/* Arrow below */
 .profile-button-tooltip::after {
   content: "";
   position: absolute;

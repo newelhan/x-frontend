@@ -3,6 +3,8 @@
   BlinkMacSystemFont, 'Segoe UI', Roboto,  
   Oxygen, Ubuntu, Cantarell, 'Open Sans',  
   'Helvetica Neue', sans-serif;
+  --twitter-blue: rgb(29, 155, 240);
+  --twitter-border: rgb(59, 60, 64);
 }
 
 body {
@@ -14,9 +16,10 @@ body {
 /* Disable those underlines under anchors */
 a, a:hover, a:active {
   text-decoration: none;
+  color: inherit;
 }
 
-/* 
+/* TO CENTER THE CONTENTS
 .wrapper {
   display: flex;
   justify-content: center;
@@ -25,3 +28,7 @@ a, a:hover, a:active {
   width: 100vw;
   margin: 0 auto;
 } */
+
+button {
+  border: none;
+}
