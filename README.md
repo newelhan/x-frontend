@@ -1,6 +1,6 @@
 preview: https://newelhan.github.io/x-frontend/
 
-recreating twitter's frontend at 100% zoom on chrome
+recreating x's frontend at 100% zoom on chrome
 
 no mobile support.. yet
 
