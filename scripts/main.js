@@ -56,3 +56,21 @@ filenames.forEach(filename => {
   
   postAddonsContainer.insertAdjacentHTML('beforeend', buttonHTML);
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const postSection = document.querySelector('.post-section');
+  const postInput = document.querySelector(".post-text");
+  const postOnClick = document.querySelector(".post-onclick");
+
+  postInput.addEventListener("click", function() {
+    postOnClick.innerHTML = `
+      <div class="visibility-container">
+        <img class="visibility-icon" src="img/upload-visibility.png">
+        <div class="visibility-settings">Everyone can reply</div>
+      </div>
+      <hr class="horizontal-rule">
+    `;
+
+    postSection.classList.add('post-section-expanded');
+  });
+});
