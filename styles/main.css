@@ -144,6 +144,10 @@ main {
   cursor: pointer;
 }
 
+.visibility-container:active {
+  background-color: rgba(0, 157, 255, 0.153);
+}
+
 .visibility-icon {
   width: 14.5px;
   height: 14px;
@@ -156,70 +160,6 @@ main {
   color: var(--twitter-blue);
   font-weight: bold;
   font-size: 14px;
-}
-
-/* Visibility Tooltip */
-.visibility-tooltip {
-  display: none;
-  position: absolute;
-  top: 50px; /* Adjust as needed */
-  left: 0;
-  background-color: #000;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 280px;
-  z-index: 1000;
-  font-family: Arial, sans-serif;
-  color: #fff;
-}
-
-.visibility-tooltip-content strong {
-  display: block;
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.visibility-tooltip-content p {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #b0b0b0;
-}
-
-.visibility-option {
-  display: flex;
-  align-items: center;
-  padding: 8px 0;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.visibility-option img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-}
-
-.visibility-option span {
-  flex-grow: 1;
-}
-
-.visibility-option .checkmark {
-  margin-left: auto;
-  width: 20px;
-  height: 20px;
-}
-
-.visibility-option:hover {
-  background-color: rgba(29, 155, 240, 0.1);
-}
-
-.visibility-settings {
-  cursor: pointer;
-}
-
-.show-tooltip {
-  display: block;
 }
 
 .horizontal-rule {
@@ -293,5 +233,22 @@ main {
   margin-top: 2px;
   width: 64.36px;
   border: none;
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
+.can-post {
+  background-color: rgb(29, 155, 240);
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.can-post:hover {
+  background-color: rgba(29, 156, 240, 0.849);
+}
+
+.can-post:active {
+  background-color: rgba(29, 156, 240, 0.733);
+}

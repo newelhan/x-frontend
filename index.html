@@ -13,22 +13,24 @@
    <div class="wrapper">
     <section class="sidebar">
       <div class="sidebar-contents">
-        
-        <!-- Button logo -->
-        <div class="x-button-container">
-          <button class="x-button" onclick="location.href=`https:/x.com/home`">
-            <img class="x-logo" src="img/x-logo.png">
-          </button>
+        <div>
+          <!-- Button logo -->
+          <div class="x-button-container">
+            <button class="x-button" onclick="location.href=`https:/x.com/home`">
+              <img class="x-logo" src="img/x-logo.png">
+            </button>
+          </div>
+
+          <!-- Buttons created with JS -->
+          <div class="button-lists"></div>
+
+          <!-- Buttons below the list -->
+            <button id="post-button" onclick="location.href=`https:/x.com/compose/post`">
+              Post
+            </button>
         </div>
-
-        <!-- Buttons created with JS -->
-         <div class="button-lists"></div>
-
-         <!-- Buttons below the list -->
-         <div class="bottom-buttons">
-          <button id="post-button" onclick="location.href=`https:/x.com/compose/post`">
-            Post
-          </button>
+     
+        <div class="button-below">
           <button id="profile-button">
             <img class="profile-picture" src="img/profile-picture.jpg">
             <div class="user-info">
@@ -40,7 +42,7 @@
             <img class="triple-dots" src="img/x-tripledots.png">
           </button>
           <!-- Tooltip for profile button-->
-           <div class="profile-button-tooltip">
+          <div class="profile-button-tooltip">
             <div class="profile-button-flexbox">
               <div><a href="https://x.com/i/flow/login" target="_blank">Add an existing account</a></div>
 

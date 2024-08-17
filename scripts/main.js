@@ -1,38 +1,35 @@
 // Make boolean value to change the post data and when refreshed still the same?
-let forYou = 1
+document.addEventListener("DOMContentLoaded", function() {
+  let forYou = localStorage.getItem("forYou") === "1" ? 1 : 0;
 
-document.querySelector('.foryou-tab').addEventListener('click', () => {
-  // Add for foryou
-  document.querySelector('.foryou-title')
-    .classList.add('current-title')
+  function updateTabUI() {
+    if (forYou === 1) {
+      document.querySelector('.foryou-title').classList.add('current-title');
+      document.querySelector('.foryou-current').classList.add('full-opacity');
+      document.querySelector('.following-title').classList.remove('current-title');
+      document.querySelector('.following-current').classList.remove('full-opacity');
+    } else {
+      document.querySelector('.following-title').classList.add('current-title');
+      document.querySelector('.following-current').classList.add('full-opacity');
+      document.querySelector('.foryou-title').classList.remove('current-title');
+      document.querySelector('.foryou-current').classList.remove('full-opacity');
+    }
+  }
 
-  document.querySelector('.foryou-current')
-    .classList.add('full-opacity')
+  updateTabUI();
 
-  // Remove for following
-  document.querySelector('.following-title')
-    .classList.remove('current-title')
+  document.querySelector('.foryou-tab').addEventListener('click', () => {
+    forYou = 1;
+    localStorage.setItem("forYou", "1");
+    updateTabUI();
+  });
 
-  document.querySelector('.following-current')
-    .classList.remove('full-opacity')
-})
-
-
-document.querySelector('.following-tab').addEventListener('click', () => {
-  // Add for following
-  document.querySelector('.following-title')
-    .classList.add('current-title')
-
-  document.querySelector('.following-current')
-    .classList.add('full-opacity')
-
-  // Remove for foryou
-  document.querySelector('.foryou-title')
-    .classList.remove('current-title')
-
-  document.querySelector('.foryou-current')
-    .classList.remove('full-opacity')
-})
+  document.querySelector('.following-tab').addEventListener('click', () => {
+    forYou = 0;
+    localStorage.setItem("forYou", "0");
+    updateTabUI();
+  });
+});
 
 // Generate the addon buttons
 const filenames = [
@@ -64,57 +61,43 @@ document.addEventListener("DOMContentLoaded", function() {
   const postButton = document.querySelector(".final-post")
 
   postInput.addEventListener("click", function() {
-    postOnClick.innerHTML = `
-      <div class="visibility-container">
-        <img class="visibility-icon" src="img/upload-visibility.png">
-        <div class="visibility-settings">Everyone can reply</div>
-        <div class="visibility-tooltip">
-            <div class="visibility-tooltip-content">
-                <strong>Who can reply?</strong>
-                <p>Choose who can reply to this post. Anyone mentioned can always reply.</p>
-                <div class="visibility-option">
-                    <img src="img/everyone-icon.png" alt="Everyone">
-                    <span>Everyone</span>
-                    <img class="checkmark" src="img/checkmark-icon.png" alt="Selected">
-                </div>
-                <div class="visibility-option">
-                    <img src="img/accounts-follow-icon.png" alt="Accounts you follow">
-                    <span>Accounts you follow</span>
-                </div>
-                <div class="visibility-option">
-                    <img src="img/verified-icon.png" alt="Verified accounts">
-                    <span>Verified accounts</span>
-                </div>
-                <div class="visibility-option">
-                    <img src="img/mention-icon.png" alt="Only accounts you mention">
-                    <span>Only accounts you mention</span>
-                </div>
-            </div>
+    if (!postOnClick.querySelector('.visibility-container')) {
+      postOnClick.innerHTML = `
+        <div class="visibility-container">
+          <img class="visibility-icon" src="img/upload-visibility.png">
+          <div class="visibility-settings">Everyone can reply</div>
         </div>
-      </div>
-      <hr class="horizontal-rule">
-    `;
-
-    postSection.classList.add('post-section-expanded');
-
-    
-    // Tooltip for visibility settings
-    const visibilitySettings = document.querySelector('.visibility-settings');
-    const visibilityTooltip = document.querySelector('.visibility-tooltip');
-
-    visibilitySettings.addEventListener('click', () => {
-        visibilityTooltip.classList.toggle('show-tooltip');
-    });
-
-    document.addEventListener('click', (e) => {
-        if (!visibilitySettings.contains(e.target) && !visibilityTooltip.contains(e.target)) {
-            visibilityTooltip.classList.remove('show-tooltip');
+        <hr class="horizontal-rule">
+      `;
+      
+      postSection.classList.add('post-section-expanded');
+  
+      const visibilityContainer = document.querySelector('.visibility-container');
+      const visibilitySettings = document.querySelector('.visibility-settings');
+      const visibilityIcon = document.querySelector('.visibility-icon');
+  
+      visibilityContainer.addEventListener('click', () => {
+        if (visibilitySettings.textContent === "Everyone can reply") {
+          visibilitySettings.textContent = "Accounts you follow can reply";
+          visibilityIcon.src = "img/visibility-follow.png";
+          visibilityContainer.style.width = "242px";
+          visibilityContainer.style.transition = "none";
+        } else {
+          visibilitySettings.textContent = "Everyone can reply";
+          visibilityIcon.src = "img/upload-visibility.png";
+          visibilityContainer.style.width = "169px";
         }
-    });
+      });
+    }
   });
 
   postInput.addEventListener("input", () => {
-    postButton.style.backgroundColor = "rgb(29, 155, 240)";
-    postButton.style.color = "white";
+    if (postInput.value.trim() !== "") {
+      postButton.classList.add("can-post");
+      postButton.disabled = false;
+    } else {
+      postButton.classList.remove("can-post");
+      postButton.disabled = true;
+    }
   });
 });

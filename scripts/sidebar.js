@@ -1,5 +1,5 @@
 // Use JS to auto generate the SIDEBAR buttons cause i'm lazy
-const sidebarButtons = ['home', 'explore', 'notifications', 'messages', 'grok', 'communities', 'profile', 'more']
+const sidebarButtons = ['home', 'explore', 'notifications', 'messages', 'grok', 'profile', 'more']
 
 // FIX THE LOCATION LATER !!
 sidebarButtons.forEach(name => {

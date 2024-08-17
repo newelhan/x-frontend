@@ -1,10 +1,9 @@
 .sidebar {
-  background-color: rgb(38, 38, 38);
+  background-color: black;
   position: fixed;
   top: 0;
   bottom: 0;
   width: 317px;
-  overflow-y: scroll;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -27,9 +26,12 @@
 
 /* Fix this */
 .sidebar-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
   margin-left: 50px;
-  padding-bottom: 10px;
+  padding-right: 10px;
   background-color: transparent;
 }
 
@@ -121,10 +123,10 @@
 }
 
 #profile-icon {
-  margin-top: 2px;
-  margin-left: 5px;
+  margin-top: 2.1px;
+  margin-left: 5.2px;
   margin-right: 20px;
-  width: 25px;
+  width: 25.3px;
 }
 
 #more-icon {
@@ -133,24 +135,16 @@
   width: 25px;
 }
 
-/* Buttons below the list */
-.bottom-buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 22.5vh;
-}
-
 #post-button {
   display: block;
   background-color: rgb(29, 155, 240);
-  border-radius: 25px;
+  border-radius: 27px;
   color: white;
   font-family: var(--twitter-font);
   font-size: 17px;
   font-weight: bold;
   height: 52px;  
-  width: 218px;
+  width: 233px;
   border: none;
   margin-bottom: 16px;
 }
@@ -163,11 +157,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 11px;
   padding: 12px;
   padding-top: 11px;
   border-radius: 120px;
   height: 67px;  
-  width: 240px;
+  width: 100%;
   border: none;
   font-family: var(--twitter-font);
   font-size: 17px;
@@ -188,7 +183,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: -20px;
+  margin-left: -39px;
   margin-top: -2px;
 }
 
