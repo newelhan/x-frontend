@@ -4,6 +4,7 @@
 
 main {
   margin-left: 317px;
+  margin-right: 30px;
   border: 1px solid var(--twitter-border);
   border-top: none;
   border-bottom: none;
@@ -182,7 +183,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 3px;
+  margin-top: 1px;
   margin-left: -2px;
 }
 
@@ -203,6 +204,7 @@ main {
 }
 
 .addon-image {
+  height: 16px;
   width: 15.8px;
   margin-left: 1px;
 }
@@ -214,7 +216,13 @@ main {
 }
 
 #upload-poll-img, #upload-emoji-img, #upload-schedule-img {
-  width: 18.6px;
+  width: 17.6px;
+  height: 17.8px;
+}
+
+#upload-location-img {
+  width: 16px;
+  height: 18px;
 }
 
 #upload-location:hover {

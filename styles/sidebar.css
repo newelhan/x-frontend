@@ -1,278 +1,40 @@
 .sidebar {
-  background-color: black;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 317px;
+  padding-top: 4px;
+  background-color: rgb(0, 0, 0);
+  width: 350px;
+  height: 100vh;
 }
 
-.sidebar::-webkit-scrollbar {
-  width: 19px;
+.sidebar * {
+  width: 93%;
 }
 
-.sidebar::-webkit-scrollbar-track {
-  background-color: rgb(23, 24, 28);
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background-color: rgb(61, 65, 67);
-  border: 3px solid rgb(23, 24, 28);
-  border-radius: 12px;
-}
-
-.sidebar::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(112, 117, 119);
-}
-
-/* Fix this */
-.sidebar-contents {
+.searchbar-container {
+  background-color: rgb(32, 35, 40);
+  border-radius: 28px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  margin-left: 50px;
-  padding-right: 10px;
+  align-items: center;
+  padding: 8px 20px; /* This is why its required to have width of 93% */
+  height: 30px;
+}
+
+.search-icon {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.searchbar {
   background-color: transparent;
-}
-
-/* General styles for buttons */
-.sidebar-contents button {
-  background-color: black;
   border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.15s;
+  color: #f5f5f5;
+  font-size: 16px;
+  flex-grow: 1;
+  padding: 0;
+  outline: none;
+  padding-left: 10px;
 }
 
-.sidebar-contents button:hover {
-  background-color: rgb(27, 27, 27);
-}
-
-/* Specific styles */
-.x-button-container {
-  margin-bottom: 6px;
-}
-
-.x-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 53px;
-  height: 53px;
-}
-
-.x-logo {
-  margin-top: 2px;
-  margin-left: -2px;
-  width: 28px;
-  height: 26px;
-}
-
-/* General button list styles */
-
-.button-lists {
-  margin-left: 2px;
-  margin-bottom: 9px;
-}
-
-.sidebar-buttons img {
-  width: 35px;
-  margin-right: 15px;
-}
-
-.sidebar-buttons button {
-  display: flex;
-  align-items: center;
-  height: 50px;
-  padding-right: 8px;
-}
-
-.button-text {
-  margin-top: -2px;
-  color: white;
-  font-size: 20px;
+.searchbar::placeholder { 
+  color: rgb(102, 106, 109); 
   font-family: var(--twitter-font);
-  margin-right: 20px;
-}
-
-/* Specific image sizes to size it with the other images (The size is FIXED and is portable) (selected by id)*/
-/* The problem from this is that the icons were taken using screenshots, and some of them has different screenshot areas so we have to adjust accordingly*/
-#home-icon {
-  width: 30px;
-  margin-left: 3px;
-  margin-right: 17px;
-}
-
-#messages-icon {
-  margin-top: 2px;
-  margin-left: 2.5px;
-  margin-right: 20px;
-  width: 28px;
-}
-
-#grok-icon {
-  margin-left: 5px;
-  margin-right: 20px;
-  width: 25px;
-}
-
-#communities-icon {
-  margin-left: 2px;
-  margin-right: 18px;
-  width: 30px;
-}
-
-#profile-icon {
-  margin-top: 2.1px;
-  margin-left: 5.2px;
-  margin-right: 20px;
-  width: 25.3px;
-}
-
-#more-icon {
-  margin-left: 5px;
-  margin-right: 20px;
-  width: 25px;
-}
-
-#post-button {
-  display: block;
-  background-color: rgb(29, 155, 240);
-  border-radius: 27px;
-  color: white;
-  font-family: var(--twitter-font);
-  font-size: 17px;
-  font-weight: bold;
-  height: 52px;  
-  width: 233px;
-  border: none;
-  margin-bottom: 16px;
-}
-
-#post-button:hover {
-  background-color: rgb(29, 136, 207);
-}
-
-#profile-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 11px;
-  padding: 12px;
-  padding-top: 11px;
-  border-radius: 120px;
-  height: 67px;  
-  width: 100%;
-  border: none;
-  font-family: var(--twitter-font);
-  font-size: 17px;
-  color: white;
-}
-
-#profile-button:active {
-  background-color: rgb(40, 40, 40);
-}
-
-.profile-picture {
-  width: 40px;
-  height: 40x;
-  border-radius: 50%;
-}
-
-.user-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: -39px;
-  margin-top: -2px;
-}
-
-.user-info div {
-  font-size: 15px;
-}
-
-.x-name {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2px;
-  margin-top: 2px;
-}
-
-.private-icon {
-  margin-top: 3px;
-  margin-left: 4px;
-  width: 13.6px;
-  height: 16.2px;
-}
-
-.x-user {
-  color: rgb(109, 109, 109);
-}
-
-.triple-dots {
-  width: 16px;
-}
-
-.profile-button-tooltip {
-  position: fixed;
-  z-index: 999;
-  left: 21px;
-  bottom: 73px;
-  width: 300px;
-  height: 112px;
-  border-radius: 15px;
-  background-color: black;
-  box-shadow: 0px 0px 10px 0.3px rgb(81, 81, 81);
-  visibility: hidden;
-}
-
-/* Arrow's shadow */
-.profile-button-tooltip::before {
-  content: "";
-  position: absolute;
-  bottom: -17px;
-  left: 149.3px;
-  transform: translateX(-50%);
-  border-width: 8px;
-  border-style: solid;
-  border-color: rgba(69, 69, 69, 0.3) transparent transparent transparent;
-  z-index: 77;
-}
-
-/* Arrow below */
-.profile-button-tooltip::after {
-  content: "";
-  position: absolute;
-  bottom: -13px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 7px;
-  border-style: solid;
-  border-color: black transparent transparent transparent;
-  z-index: 100;
-}
-
-.profile-button-flexbox {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.profile-button-flexbox div {
-  font-family: var(--twitter-font);
-  font-weight: bold;
-  padding-left: 16px;
-  width: 100% - 16px;
-  height: 44px;
-  font-size: 15px;
-  color: white;
-  display: flex;
-  align-items: center;
-}
-
-.profile-button-flexbox div:hover  {
-  background-color: rgb(20, 20, 25);
-  cursor: pointer;
 }

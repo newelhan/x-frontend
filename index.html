@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home / X</title>
   <link rel="stylesheet" href="styles/general.css">
-  <link rel="stylesheet" href="styles/sidebar.css">
+  <link rel="stylesheet" href="styles/navigation.css">
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
   <link rel="icon" href="img/favicon.png">
 </head>
 <body>
    <div class="wrapper">
-    <section class="sidebar">
-      <div class="sidebar-contents">
+    <nav>
+      <div class="nav-contents">
         <div>
           <!-- Button logo -->
           <div class="x-button-container">
@@ -51,7 +52,7 @@
            </div>
         </div>
       </div>
-     </section>
+    </nav>
 
      <main>
       <div class="topbar">
@@ -86,11 +87,19 @@
         </div>
       </div>
      </main>
+
+     <section class="sidebar">
+      <div class="searchbar-container">
+        <img class="search-icon" src="img/search-icon.png">
+        <input class="searchbar" type="text" placeholder="Search">
+      </div>
+     </section>
    </div>
 
    <!-- Using GSAP for smoother X animations -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
-   <script src="scripts/sidebar.js"></script>
+   <script src="scripts/navigation.js"></script>
    <script src="scripts/main.js"></script>
+   <script src="scripts/sidebar.js"></script>
 </body>
 </html>
