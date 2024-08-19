@@ -1,16 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const container = document.querySelector('.searchbar-container');
+  const container = document.querySelector('.searchbar');
   const searchIcon = document.querySelector('.search-icon');
 
   container.addEventListener('focusin', function () {
-      container.style.borderColor = '#1a73e8'; // Blue color
-      searchIcon.src = 'img/search-icon-blue.png'; // Change to blue icon
-      searchIcon.style.filter = 'none'; // Remove invert filter if needed
+      container.style.backgroundColor = 'black';
+      container.style.borderColor = '#1a73e8';
+      searchIcon.src = 'img/search-icon-blue.png';
+      searchIcon.style.width = '16px';
   });
 
   container.addEventListener('focusout', function () {
-      container.style.borderColor = 'transparent'; // Reset border color
-      searchIcon.src = 'img/search-icon.png'; // Reset to original icon
-      searchIcon.style.filter = 'invert(100%)'; // Reapply invert filter
+      container.style.backgroundColor = 'rgb(32, 35, 40)';
+      container.style.borderColor = 'transparent';
+      searchIcon.src = 'img/search-icon.png';
+      searchIcon.style.width = '17px';
   });
 });
