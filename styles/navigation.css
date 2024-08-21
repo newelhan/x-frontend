@@ -1,9 +1,11 @@
 nav {
   background-color: black;
-  position: fixed;
+  position: sticky;
+  width: 317px;
+  height: 100vh;
   top: 0;
   bottom: 0;
-  width: 317px;
+  left: 0;
 }
 
 nav::-webkit-scrollbar {
