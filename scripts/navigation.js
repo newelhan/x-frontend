@@ -6,7 +6,7 @@ const navButtons = {
   messages: 'https://x.com/messages',
   grok: 'https://x.com/i/grok',
   profile: 'https://x.com/newelhan',
-  more: 'https://x.com/settings/account'
+  more: 'https://x.com/settings/account',
 };
 
 Object.entries(navButtons).forEach(([name, link]) => {

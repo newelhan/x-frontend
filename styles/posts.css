@@ -1,0 +1,269 @@
+.post-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.post-container * {
+  color: white;
+}
+
+.post {
+  background-color: #000000;
+  padding: 15px;
+  padding-bottom: 2px;
+  padding-right: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: solid 1px var(--twitter-border);
+}
+
+.post-header {
+  display: flex;
+}
+
+.post-profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 1px;
+  margin-top: -2px;
+}
+
+.post-statusicon {
+  width: 13.4px;
+  height: 16.3px;
+  margin-top: 4px;
+  margin-left: 3.8px;
+  margin-right: 8px;
+}
+
+.top-info {
+  display: flex;
+  flex-direction: row;
+  width: 521px;
+}
+
+.post-user-info {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  margin-top: -4px;
+  margin-left: -2px;
+  margin-bottom: 0px;
+}
+
+.post-displayname {
+  margin-top: 2px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.post-username, .post-time {
+  margin-top: 2px;
+  color: gray;
+  font-size: 15px;
+  margin-right: 2px;
+}
+
+#more-addon-icon {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  background-color: transparent; /* Remove background color */
+  padding: 7px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  border-radius: 0; /* Remove border-radius */
+}
+
+button.stat-button#more-button {
+  margin-top: -9px;
+  margin-right: -2px;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 34.75px;
+  height: 34.75px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+button.stat-button#more-button:hover {
+  background-color: #00a6ff31;
+}
+
+/* Tooltip styling for more-addon-icon */
+.more-addon-icon-tooltip {
+  visibility: hidden;
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.more-addon-icon-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #444 transparent transparent transparent;
+}
+
+/* Make tooltip visible on hover */
+.more-addon-icon-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.post-content {
+  width: 518px;
+  margin-left: -2px;
+  margin-bottom: -18px;
+}
+
+.post-description {
+  font-size: 14.5px;
+  margin-top: -6px;
+  margin-bottom: 10px;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -26px;
+  margin-left: -10px;
+  width: 532px;
+}
+
+.post-stat {
+  display: flex;
+  align-items: center;
+}
+
+.post-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+
+button.stat-button {
+  background-color: #000000;
+  border-radius: 50%;
+  border: none;
+  width: 34.75px;
+  height: 34.75px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.stat-button:hover {
+  background-color: #00a6ff31; /* Darker blue on hover */
+}
+
+button.stat-button.red:hover {
+  background-color: #ff005161; /* Darker red on hover */
+}
+
+button.stat-button.green:hover {
+  background-color: #00ff7353; /* Darker green on hover */
+}
+
+button.stat-button img {
+  width: 18px;
+  height: 18px;
+  margin-right: -1px;
+}
+
+.stat-button-tooltip {
+  visibility: hidden;
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; 
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.stat-button-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #444 transparent transparent transparent;
+}
+
+button.stat-button:hover .stat-button-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+/* Special images */
+#comment-icon {
+  width: 16px;
+  height: 16px;
+}
+
+#heart-icon {
+  width: 16px;
+  height: 16px;
+}
+
+#views-icon {
+  margin-left: -2px;
+}
+
+#bookmark-button {
+  margin-right: 5px;
+}
+
+#bookmark-icon {
+  width: 18.75px;
+  height: 19.75px;
+  margin-right: -2px;
+}
+
+#share-icon {
+  width: 16px;
+  height: 16px;
+}
+
+#share-button {
+  background-color: transparent;
+  margin-left: -10px;
+}
+
+#share-button:hover {
+  background-color: #00a6ff3d; 
+}
