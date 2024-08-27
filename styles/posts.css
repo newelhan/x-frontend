@@ -140,19 +140,19 @@ button.stat-button#more-button:hover {
 .post-description {
   font-size: 14.5px;
   margin-top: -6px;
-  margin-bottom: 10px;
 }
 
 .post-image {
   width: 100%;
+  margin-top: 10px;
   border-radius: 10px;
 }
 
 .post-footer {
   display: flex;
   justify-content: space-between;
-  margin-top: -26px;
   margin-left: -10px;
+  padding-top: 22px;
   width: 532px;
 }
 

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
       username: "@newelhan",
       time: "1h",
       description: "hello1",
-      imageSrc: "",
+      imageSrc: "img/test-image.png",
       likes: "",
       reposts: "",
       comments: "",
@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
           
           <div class="post-content">
             <div class="post-description">${post.description}</div>
-            <img class="post-image" src="${post.imageSrc}" alt="">
           </div>
           <div class="post-footer">
             <div class="post-stat">
@@ -90,6 +89,11 @@ document.addEventListener("DOMContentLoaded", function() {
     `;
 
     postContainer.insertAdjacentHTML('beforeend', postHTML);
+
+    let postImageHtml = `<img class="post-image" src="${post.imageSrc}"></img>`
+    if (post.imageSrc !== "") {
+      document.querySelector(".post-content").insertAdjacentHTML('beforeend', postImageHtml);
+    }
   });
 
   // Array of buttons and corresponding hover images
