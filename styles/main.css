@@ -76,19 +76,15 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100% - 16px;
-  height: 120px;
+  min-height: 120px; /* Use min-height instead of height */
   padding-top: 1px;
   padding-left: 16px;
   padding-right: 16px;
   background-color: rgb(0, 0, 0);
   border-bottom: 1px solid var(--twitter-border);
+  transition: height 0.3s ease; /* Add transition for smooth height change */
 }
 
-.post-section-expanded {
-  display: block;
-  height: 157px;
-}
 
 .post-attributes {
   margin-left: 44px;

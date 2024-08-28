@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const posts = [
+  const postsData = [
     {
       profilePic: "img/profile-picture.jpg",
       displayname: "Ethan Welhan",
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const postContainer = document.querySelector('.post-container');
 
-  posts.forEach(post => {
+  postsData.forEach(post => {
     const postHTML = `
     <div class="post">
       <div class="post-header">
@@ -90,13 +90,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     postContainer.insertAdjacentHTML('beforeend', postHTML);
 
-    let postImageHtml = `<img class="post-image" src="${post.imageSrc}"></img>`
     if (post.imageSrc !== "") {
-      document.querySelector(".post-content").insertAdjacentHTML('beforeend', postImageHtml);
+      document.querySelector(".post-content").insertAdjacentHTML('beforeend', `<img class="post-image" src="${post.imageSrc}"></img>`);
     }
   });
 
-  // Array of buttons and corresponding hover images
   const hoverButtons = [
     { id: 'comment-button', defaultSrc: 'img/comment-icon.png', hoverSrc: 'img/comment-icon-active.png' },
     { id: 'repost-button', defaultSrc: 'img/repost-icon.png', hoverSrc: 'img/repost-icon-active.png' },
@@ -107,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function() {
     { id: 'more-button', defaultSrc: 'img/more-addon-icon.png', hoverSrc: 'img/more-addon-icon-active.png' }
   ];
 
-  // Add event listeners for hover effects
   hoverButtons.forEach(button => {
     const buttonElement = document.getElementById(button.id);
     const imgElement = buttonElement.querySelector('img');

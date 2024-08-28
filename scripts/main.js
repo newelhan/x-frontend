@@ -1,64 +1,77 @@
-// Make boolean value to change the post data and when refreshed still the same?
 document.addEventListener("DOMContentLoaded", function() {
-  let forYou = localStorage.getItem("forYou") === "1" ? 1 : 0;
+  const addonButtons = [
+    'upload-media',
+    'upload-gif',
+    'upload-emoji',
+    'upload-schedule',
+    'upload-location'
+  ];
 
-  function updateTabUI() {
-    if (forYou === 1) {
-      document.querySelector('.foryou-title').classList.add('current-title');
-      document.querySelector('.foryou-current').classList.add('full-opacity');
-      document.querySelector('.following-title').classList.remove('current-title');
-      document.querySelector('.following-current').classList.remove('full-opacity');
-    } else {
-      document.querySelector('.following-title').classList.add('current-title');
-      document.querySelector('.following-current').classList.add('full-opacity');
-      document.querySelector('.foryou-title').classList.remove('current-title');
-      document.querySelector('.foryou-current').classList.remove('full-opacity');
-    }
-  }
+  const postAddonsContainer = document.querySelector('.post-addons');
 
-  updateTabUI();
-
-  document.querySelector('.foryou-tab').addEventListener('click', () => {
-    forYou = 1;
-    localStorage.setItem("forYou", "1");
-    updateTabUI();
+  addonButtons.forEach(buttonId => {
+    const buttonHTML = `
+      <div class="post-addon-buttons">
+        <button class="addon-button" id="${buttonId}">
+          <img class="addon-image" id="${buttonId}-img" src="img/${buttonId}.png">
+        </button>
+      </div>`;
+    
+    postAddonsContainer.insertAdjacentHTML('beforeend', buttonHTML);
   });
 
-  document.querySelector('.following-tab').addEventListener('click', () => {
-    forYou = 0;
-    localStorage.setItem("forYou", "0");
-    updateTabUI();
-  });
-});
-
-// Generate the addon buttons
-const filenames = [
-  'upload-media',
-  'upload-gif', 
-  'upload-poll',
-  'upload-emoji',
-  'upload-schedule',
-  'upload-location'
-];
-
-const postAddonsContainer = document.querySelector('.post-addons');
-
-filenames.forEach(filename => {
-  const buttonHTML = `
-    <div class="post-addon-buttons">
-      <button class="addon-button" id="${filename}">
-        <img class="addon-image" id="${filename}-img" src="img/${filename}.png">
-      </button>
-    </div>`;
-  
-  postAddonsContainer.insertAdjacentHTML('beforeend', buttonHTML);
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  const postSection = document.querySelector('.post-section');
   const postInput = document.querySelector(".post-text");
   const postOnClick = document.querySelector(".post-onclick");
-  const postButton = document.querySelector(".final-post")
+  const postButton = document.querySelector(".final-post");
+
+  // Upload media and GIFs
+  document.getElementById('upload-media').addEventListener('click', () => {
+    document.getElementById('upload-media-input').click();
+  });
+
+  document.getElementById('upload-gif').addEventListener('click', () => {
+    document.getElementById('upload-gif-input').click();
+  });
+
+  // File input change event listeners
+  document.getElementById('upload-media-input').addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      console.log('Media selected:', file.name);
+      // Handle file upload logic here
+    }
+  });
+
+  document.getElementById('upload-gif-input').addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      console.log('GIF selected:', file.name);
+      // Handle GIF upload logic here
+    }
+  });
+
+  // Emoji picker
+  document.getElementById('upload-emoji').addEventListener('click', () => {
+    const emoji = prompt("Enter emoji:");
+    if (emoji) {
+      postInput.value += emoji;
+      postInput.focus();
+    }
+  });
+
+  // Schedule post
+  document.getElementById('upload-schedule').addEventListener('click', () => {
+    const scheduleInput = document.getElementById('schedule-datetime-input');
+    scheduleInput.click();
+
+    scheduleInput.addEventListener('change', (event) => {
+      const scheduledTime = event.target.value;
+      if (scheduledTime) {
+        console.log('Post scheduled for:', scheduledTime);
+        // Store the scheduled time or handle scheduling logic here
+      }
+    });
+  });
 
   postInput.addEventListener("click", function() {
     if (!postOnClick.querySelector('.visibility-container')) {
@@ -70,18 +83,17 @@ document.addEventListener("DOMContentLoaded", function() {
         <hr class="horizontal-rule">
       `;
       
-      postSection.classList.add('post-section-expanded');
-  
+      document.querySelector('.post-section').classList.add('post-section-expanded');
+
       const visibilityContainer = document.querySelector('.visibility-container');
       const visibilitySettings = document.querySelector('.visibility-settings');
       const visibilityIcon = document.querySelector('.visibility-icon');
-  
+
       visibilityContainer.addEventListener('click', () => {
         if (visibilitySettings.textContent === "Everyone can reply") {
           visibilitySettings.textContent = "Accounts you follow can reply";
           visibilityIcon.src = "img/visibility-follow.png";
           visibilityContainer.style.width = "242px";
-          visibilityContainer.style.transition = "none";
         } else {
           visibilitySettings.textContent = "Everyone can reply";
           visibilityIcon.src = "img/upload-visibility.png";
@@ -92,11 +104,14 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   postInput.addEventListener("input", () => {
+    const postSection = document.querySelector('.post-section');
     if (postInput.value.trim() !== "") {
       postButton.classList.add("can-post");
+      postSection.style.height = "157px"; // Increase height to 157px
       postButton.disabled = false;
     } else {
       postButton.classList.remove("can-post");
+      postSection.style.height = "120px"; // Reset height to 120px
       postButton.disabled = true;
     }
   });
