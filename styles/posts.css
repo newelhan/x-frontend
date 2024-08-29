@@ -140,6 +140,7 @@ button.stat-button#more-button:hover {
 .post-description {
   font-size: 14.5px;
   margin-top: -6px;
+  margin-bottom: 10px;
 }
 
 .post-image {
@@ -266,4 +267,10 @@ button.stat-button:hover .stat-button-tooltip {
 
 #share-button:hover {
   background-color: #00a6ff3d; 
+}
+
+.post-media {
+  width: 500px;
+  border-radius: 20px;
+  border: var(--twitter-border) 1.7px solid;
 }

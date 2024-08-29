@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
       username: "@newelhan",
       time: "1h",
       description: "hello1",
-      imageSrc: "img/test-image.png",
+      mediaSrc: "img/test-image.png",
       likes: "",
       reposts: "",
       comments: "",
@@ -90,9 +90,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     postContainer.insertAdjacentHTML('beforeend', postHTML);
 
-    if (post.imageSrc !== "") {
-      document.querySelector(".post-content").insertAdjacentHTML('beforeend', `<img class="post-image" src="${post.imageSrc}"></img>`);
-    }
+    if (post.mediaSrc !== "") {
+      document.querySelector(".post-content").insertAdjacentHTML('beforeend', `<img class="post-image" src="${post.mediaSrc}" alt="Post Media">`);
+    }    
   });
 
   const hoverButtons = [

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
       username: "@newelhan",
       time: "1h",
       description: "hello1",
-      imageSrc: "img/test-image.png",
+      mediaSrc: "img/test-image.png",
       likes: "23",
       reposts: "3",
       comments: "45",
@@ -18,6 +18,45 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const postButton = document.querySelector(".final-post");
   const postInput = document.querySelector(".post-text");
+  let uploadedMediaSrc = "";
+
+  // Upload media and GIFs
+  document.getElementById('upload-media').addEventListener('click', () => {
+    document.getElementById('upload-media-input').click();
+  });
+
+  document.getElementById('upload-gif').addEventListener('click', () => {
+    document.getElementById('upload-gif-input').click();
+  });
+
+  // File input change event listeners
+  document.getElementById('upload-media-input').addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        uploadedMediaSrc = e.target.result;
+        console.log('Media selected:', file.name);
+        document.getElementById('media-preview').src = uploadedMediaSrc;
+        document.getElementById('media-preview').style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  document.getElementById('upload-gif-input').addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        uploadedMediaSrc = e.target.result;
+        console.log('GIF selected:', file.name);
+        document.getElementById('media-preview').src = uploadedMediaSrc;
+        document.getElementById('media-preview').style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+  });
 
   function renderPosts() {
     const postContainer = document.querySelector('.post-container');
@@ -44,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
               
               <div class="post-content">
                 <div class="post-description">${post.description}</div>
-                ${post.imageSrc ? `<img class="post-image" src="${post.imageSrc}" alt="Post Image">` : ''}
+                ${post.mediaSrc ? `<img class="post-media" src="${post.mediaSrc}" alt="Post Media">` : ''}
               </div>
               <div class="post-footer">
                 <div class="post-stat">
@@ -93,39 +132,8 @@ document.addEventListener("DOMContentLoaded", function() {
           </div>
         </div>
       `;
-  
+
       postContainer.insertAdjacentHTML('beforeend', postHTML);
-    });
-  
-    const hoverButtons = [
-      { id: 'comment-button', defaultSrc: 'img/comment-icon.png', hoverSrc: 'img/comment-icon-active.png' },
-      { id: 'repost-button', defaultSrc: 'img/repost-icon.png', hoverSrc: 'img/repost-icon-active.png' },
-      { id: 'like-button', defaultSrc: 'img/heart-icon.png', hoverSrc: 'img/heart-icon-active.png' },
-      { id: 'views-button', defaultSrc: 'img/views-icon.png', hoverSrc: 'img/views-icon-active.png' },
-      { id: 'bookmark-button', defaultSrc: 'img/bookmark-icon.png', hoverSrc: 'img/bookmark-icon-active.png' },
-      { id: 'share-button', defaultSrc: 'img/share-icon.png', hoverSrc: 'img/share-icon-active.png' },
-      { id: 'more-button', defaultSrc: 'img/more-addon-icon.png', hoverSrc: 'img/more-addon-icon-active.png' }
-    ];
-  
-    hoverButtons.forEach(button => {
-      const buttonElement = document.getElementById(button.id);
-      const imgElement = buttonElement.querySelector('img');
-      
-      buttonElement.addEventListener('mouseenter', function() {
-        imgElement.src = button.hoverSrc;
-        const tooltip = buttonElement.querySelector('.more-addon-icon-tooltip');
-        if (tooltip) {
-          tooltip.style.display = 'block';
-        }
-      });
-  
-      buttonElement.addEventListener('mouseleave', function() {
-        imgElement.src = button.defaultSrc;
-        const tooltip = buttonElement.querySelector('.more-addon-icon-tooltip');
-        if (tooltip) {
-          tooltip.style.display = 'none';
-        }
-      });
     });
   }  
 
@@ -160,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function() {
         username: "@newelhan",
         time: "Just now",
         description: postInput.value,
-        imageSrc: "",
+        mediaSrc: uploadedMediaSrc,
         likes: formatNumber(likes),
         reposts: formatNumber(reposts),
         comments: formatNumber(comments),
@@ -169,6 +177,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
       postsData.unshift(newPost);
       postInput.value = "";
+
+      uploadedMediaSrc = "";
+      document.getElementById('media-preview').style.display = 'none';
+
       renderPosts();
       postButton.classList.remove("can-post");
     }

@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const addonButtons = [
     'upload-media',
     'upload-gif',
+    'upload-poll',
     'upload-emoji',
     'upload-schedule',
     'upload-location'
@@ -57,32 +58,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const postInput = document.querySelector(".post-text");
   const postOnClick = document.querySelector(".post-onclick");
   const postButton = document.querySelector(".final-post");
-
-  // Upload media and GIFs
-  document.getElementById('upload-media').addEventListener('click', () => {
-    document.getElementById('upload-media-input').click();
-  });
-
-  document.getElementById('upload-gif').addEventListener('click', () => {
-    document.getElementById('upload-gif-input').click();
-  });
-
-  // File input change event listeners
-  document.getElementById('upload-media-input').addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      console.log('Media selected:', file.name);
-      // Handle file upload logic here
-    }
-  });
-
-  document.getElementById('upload-gif-input').addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      console.log('GIF selected:', file.name);
-      // Handle GIF upload logic here
-    }
-  });
 
   function updatePostSection() {
     if (postInput.value.trim() !== "") {
