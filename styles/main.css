@@ -6,8 +6,12 @@ main {
   width: 598px;
   height: 100vh;
   background-color: black;
-  overflow-y: visible;
+  overflow-y: auto;
   z-index: 999;
+}
+
+main::-webkit-scrollbar {
+  display: none;
 }
 
 .topbar {
@@ -132,7 +136,6 @@ main {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: 0.25s;
 }
 
 .visibility-container:hover {

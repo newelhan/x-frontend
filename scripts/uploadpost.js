@@ -129,26 +129,60 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }  
 
-  postButton.addEventListener("click", function() {
-    const newPost = {
-      profilePic: "img/profile-picture.jpg",
-      displayname: "Ethan Welhan",
-      statusicon: "img/x-private.png",
-      username: "@newelhan",
-      time: "Just now",
-      description: postInput.value,
-      imageSrc: "",
-      likes: "",
-      reposts: "",
-      comments: "",
-      views: ""
-    };
+  function handlePost() {
+    if (postInput.value.trim() === "") {
+      postButton.classList.remove("can-post");
+      console.log("Nothing to post.");
+    } else {
+      function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
 
-    postsData.unshift(newPost);
+      function formatNumber(number) {
+        if (number >= 1000000) {
+          return (number / 1000000).toFixed(1) + "m";
+        } else if (number >= 1000) {
+          return (number / 1000).toFixed(1) + "k";
+        } else {
+          return number.toString();
+        }
+      }
 
-    postInput.value = "";
+      const views = getRandomNumber(200000, 1000000);
+      const likes = getRandomNumber(50000, views - 1);
+      const reposts = getRandomNumber(10000, likes - 1);
+      const comments = getRandomNumber(200, reposts - 1);
 
-    renderPosts();
+      const newPost = {
+        profilePic: "img/profile-picture.jpg",
+        displayname: "Ethan Welhan",
+        statusicon: "img/x-private.png",
+        username: "@newelhan",
+        time: "Just now",
+        description: postInput.value,
+        imageSrc: "",
+        likes: formatNumber(likes),
+        reposts: formatNumber(reposts),
+        comments: formatNumber(comments),
+        views: formatNumber(views)
+      };
+
+      postsData.unshift(newPost);
+      postInput.value = "";
+      renderPosts();
+      postButton.classList.remove("can-post");
+    }
+  }
+
+  // Event listener for the post button click
+  postButton.addEventListener("click", handlePost);
+
+  // Event listener for the Enter key
+  postInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter" && postInput.value.trim() !== "") {
+      event.preventDefault();
+      handlePost();
+    }
   });
 
   renderPosts();

@@ -7,6 +7,10 @@
   --twitter-border: rgb(51, 53, 56);
 }
 
+html {
+  height: 100vh;
+}
+
 body {
   display: flex;
   justify-content: center;
