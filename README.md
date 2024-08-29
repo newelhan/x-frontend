@@ -1,11 +1,9 @@
-preview: https://newelhan.github.io/x-frontend/
+Tried to replicate a website's front-end
 
-recreating x's frontend at 100% zoom on chrome
+Preview: https://newelhan.github.io/x-frontend/
 
-no mobile support.. yet
+No mobile support...... yet
 
-17 july 2024: gathered images
+This is as close as I can get to recreating X (Twitter)'s front end
 
-18 july 2024: created the sidebar
-
-19 july 2024: finished the sidebar and topbar
+Started on 17 July 2024
