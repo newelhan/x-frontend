@@ -111,3 +111,86 @@
 .subscribe-button:hover {
   background-color: #0a84d0;
 }
+
+/* Trends for you */
+.trends-container {
+  margin-top: 16px;
+  background-color: #000000;
+  color: #ffffff;
+  padding-left: 16px;
+  padding-right: 0px;
+  padding-top: 10px;
+  padding-bottom: 11.4px;
+  width: 332px;
+  border-radius: 16px;
+  border: 1px solid var(--twitter-border);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-family: Arial, sans-serif;
+}
+
+.trends-title {
+  font-family: var(--twitter-font);
+  font-weight: 900;
+  font-size: 20px;
+  margin-bottom: -2px;
+}
+
+.trends-list {
+  margin-left: -56px;
+  list-style: none;
+}
+
+.trend-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  padding-bottom: 15px;
+  padding-left: 16px;
+  cursor: pointer;
+}
+
+.trend-item:hover {
+  background-color: rgba(128, 128, 128, 0.172);
+}
+
+.trend-item:first-child {
+  border-top: none;
+}
+
+.trend-info * {
+  font-family: var(--twitter-font);
+}
+
+.trend-category {
+  margin-top: -4px;
+  color: gray;
+  font-size: 13px;
+}
+
+.trend-name {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 3px;
+}
+
+.trend-posts {
+  color: gray;
+  font-size: 13px;
+}
+
+.show-more {
+  margin-top: 10px;
+  font-family: var(--twitter-font);
+  font-size: 15px;
+}
+
+.show-more a {
+  color: #1da1f2;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.show-more a:hover {
+  color: #0a84d0;
+}

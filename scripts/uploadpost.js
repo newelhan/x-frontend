@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
       statusicon: "img/verified-icon.png",
       username: "@newelhan",
       time: "1h",
-      description: "1107E 7AT7 (Scroll here)",
+      description: "#%^&@ !^&% (Please scroll here)",
       mediaSrc: "img/gatto.gif",
       likes: "9.4k",
       reposts: "3.2k",
