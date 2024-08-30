@@ -20,6 +20,16 @@ document.addEventListener("DOMContentLoaded", function() {
   const postInput = document.querySelector(".post-text");
   let uploadedMediaSrc = "";
 
+  const mediaPreview = document.getElementById("media-preview");
+  const deleteButton = document.getElementById("delete-button");
+
+  // Show image and delete button when a new image is selected
+  function showImage() {
+    mediaPreview.style.display = "block";
+    deleteButton.style.display = "block";
+  }
+
+
   // Upload media and GIFs
   document.getElementById('upload-media').addEventListener('click', () => {
     document.getElementById('upload-media-input').click();
@@ -38,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
         uploadedMediaSrc = e.target.result;
         console.log('Media selected:', file.name);
         document.getElementById('media-preview').src = uploadedMediaSrc;
-        document.getElementById('media-preview').style.display = 'block';
+        showImage();
       };
       reader.readAsDataURL(file);
     }
@@ -137,6 +147,15 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }  
 
+  // Handle delete button click to remove the image
+  deleteButton.addEventListener("click", () => {
+    postsData.mediaSrc = "";
+    uploadedMediaSrc = "";
+    mediaPreview.src = "";
+    mediaPreview.style.display = "none";
+    deleteButton.style.display = "none";
+  });
+
   function handlePost() {
     if (postInput.value.trim() === "") {
       postButton.classList.remove("can-post");
@@ -180,11 +199,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
       uploadedMediaSrc = "";
       document.getElementById('media-preview').style.display = 'none';
-
+      deleteButton.style.display = "none";
+      
       renderPosts();
       postButton.classList.remove("can-post");
     }
-  }
+  } 
 
   // Event listener for the post button click
   postButton.addEventListener("click", handlePost);

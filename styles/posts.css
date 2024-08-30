@@ -140,7 +140,6 @@ button.stat-button#more-button:hover {
 .post-description {
   font-size: 14.5px;
   margin-top: -6px;
-  margin-bottom: 10px;
 }
 
 .post-image {
@@ -270,7 +269,35 @@ button.stat-button:hover .stat-button-tooltip {
 }
 
 .post-media {
+  margin-top: 10px;
   width: 500px;
   border-radius: 20px;
   border: var(--twitter-border) 1.7px solid;
+}
+
+#delete-button {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.53);
+  color: white;
+  display: none;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  line-height: 24px;
+  transition: 0.15s;
+}
+
+#delete-button:hover {
+  background-color: rgb(111, 2, 2);
+}
+
+#delete-button:active {
+  background-color: rgb(85, 0, 0);
 }
