@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log('GIF selected:', file.name);
         document.getElementById('media-preview').src = uploadedMediaSrc;
         document.getElementById('media-preview').style.display = 'block';
+        showImage();
       };
       reader.readAsDataURL(file);
     }

@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function updatePostSection() {
     if (postInput.value.trim() !== "") {
       postButton.classList.add("can-post");
-      postSection.style.height = "157px"; // Increase height to 157px
+      postSection.style.height = "157px"; 
       postButton.disabled = false;
 
       // Only update innerHTML if it’s not already set
@@ -94,8 +94,8 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       postButton.classList.remove("can-post");
       postButton.disabled = true;
-      postOnClick.innerHTML = ''; // Clear the postOnClick content
-      postSection.style.height = "120px"; // Reset height to 120px
+      postOnClick.innerHTML = '';
+      postSection.style.height = "120px";
     }
   }
 
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
   postInput.addEventListener("click", () => {
     // Only handle postInput click if not already processed
     if (postInput.value.trim() !== "") {
-      updatePostSection(); // Update section based on input value
+      updatePostSection();
     }
   });
 });

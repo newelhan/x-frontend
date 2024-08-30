@@ -70,11 +70,11 @@
   height: 20px;
   width: 20px;
   cursor: pointer;
-  background-color: transparent; /* Remove background color */
+  background-color: transparent; 
   padding: 7px;
   transition: background-color 0.3s ease;
   position: relative;
-  border-radius: 0; /* Remove border-radius */
+  border-radius: 0; 
 }
 
 button.stat-button#more-button {
@@ -106,12 +106,12 @@ button.stat-button#more-button:hover {
   padding: 5px;
   position: absolute;
   z-index: 1;
-  bottom: 125%; /* Position the tooltip above the icon */
+  bottom: 125%; 
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s;
-  white-space: nowrap; /* Prevent text from wrapping */
+  white-space: nowrap; 
 }
 
 .more-addon-icon-tooltip::after {
@@ -181,15 +181,15 @@ button.stat-button {
 }
 
 button.stat-button:hover {
-  background-color: #00a6ff31; /* Darker blue on hover */
+  background-color: #00a6ff31; 
 }
 
 button.stat-button.red:hover {
-  background-color: #ff005161; /* Darker red on hover */
+  background-color: #ff005161; 
 }
 
 button.stat-button.green:hover {
-  background-color: #00ff7353; /* Darker green on hover */
+  background-color: #00ff7353; 
 }
 
 button.stat-button img {

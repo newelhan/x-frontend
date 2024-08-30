@@ -80,13 +80,13 @@ main::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 120px; /* Use min-height instead of height */
+  min-height: 120px;
   padding-top: 1px;
   padding-left: 16px;
   padding-right: 16px;
   background-color: rgb(0, 0, 0);
   border-bottom: 1px solid var(--twitter-border);
-  transition: height 0.3s ease; /* Add transition for smooth height change */
+  transition: height 0.3s ease;
 }
 
 
