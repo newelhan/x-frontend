@@ -6,12 +6,13 @@ No mobile support...... yet?
 
 This is as close as I can get to recreating X (Twitter)'s front end
 
-Started on 17 July 2024
-Finished on 30 August 2024 (Procrastination is no joke)
-
 REPLICATION ---
 - Replicated all elements from the nav, main container, sidebar PIXEL BY PIXEL using CSS with 100% zoom (MOST GUT WRENCHING PART, switching tabs back and forth)
 - Copied and screenshotted each of the images from the buttons (Both inactive and active buttons)
+
+Started on 17 July 2024
+
+Finished on 30 August 2024 (Procrastination is no joke)
 
 MADE THE UPLOAD POST ALGORITHM ---
 1. Saving the data with JavaScript's Object
