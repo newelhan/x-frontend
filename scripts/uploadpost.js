@@ -3,15 +3,15 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       profilePic: "img/profile-picture.jpg",
       displayname: "Ethan Welhan",
-      statusicon: "img/x-private.png",
+      statusicon: "img/verified-icon.png",
       username: "@newelhan",
       time: "1h",
-      description: "hello1",
-      mediaSrc: "img/test-image.png",
-      likes: "23",
-      reposts: "3",
-      comments: "45",
-      views: "2"
+      description: "1107E 7AT7 (Scroll here)",
+      mediaSrc: "img/gatto.gif",
+      likes: "9.4k",
+      reposts: "3.2k",
+      comments: "432",
+      views: "12.1k"
     },
     // More posts can be added here
   ];
@@ -176,15 +176,32 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
 
-      const views = getRandomNumber(200000, 1000000);
-      const likes = getRandomNumber(50000, views - 1);
-      const reposts = getRandomNumber(10000, likes - 1);
-      const comments = getRandomNumber(200, reposts - 1);
+      let currentStatusIcon;
+      const visibilitySettings = document.querySelector('.visibility-settings');
+      // Change the user's status icon
+      let views = 0;
+      let likes = 0;
+      let reposts = 0;
+      let comments = 0;
+      if (visibilitySettings.textContent === "Everyone can reply") {
+        currentStatusIcon = "img/verified-icon.png";
+        views = getRandomNumber(200000, 1000000);
+        likes = getRandomNumber(50000, views - 1);
+        reposts = getRandomNumber(10000, likes - 1);
+        comments = getRandomNumber(200, reposts - 1);
+      }
+      else {
+        currentStatusIcon = "img/x-private.png";
+        views = getRandomNumber(100, 1000);
+        likes = getRandomNumber(700, views - 1);
+        reposts = getRandomNumber(900, likes - 1);
+        comments = getRandomNumber(200, reposts - 1);
+      }
 
       const newPost = {
         profilePic: "img/profile-picture.jpg",
         displayname: "Ethan Welhan",
-        statusicon: "img/x-private.png",
+        statusicon: currentStatusIcon,
         username: "@newelhan",
         time: "Just now",
         description: postInput.value,
