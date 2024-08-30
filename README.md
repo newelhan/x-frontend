@@ -1,3 +1,5 @@
+You can make me say a lot of things on X with this.. (please don't)
+
 Tried to replicate a website's front-end
 
 Preview: https://newelhan.github.io/x-frontend/
