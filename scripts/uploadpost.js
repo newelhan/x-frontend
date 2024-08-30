@@ -193,8 +193,8 @@ document.addEventListener("DOMContentLoaded", function() {
       else {
         currentStatusIcon = "img/x-private.png";
         views = getRandomNumber(100, 1000);
-        likes = getRandomNumber(700, views - 1);
-        reposts = getRandomNumber(900, likes - 1);
+        likes = getRandomNumber(900, views - 1);
+        reposts = getRandomNumber(700, likes - 1);
         comments = getRandomNumber(200, reposts - 1);
       }
 
