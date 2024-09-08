@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
       statusicon: "img/x-private.png",
       username: "@newelhan",
       time: "1h",
-      description: "hello1",
-      mediaSrc: "img/test-image.png",
+      description: "",
+      mediaSrc: "",
       likes: "",
       reposts: "",
       comments: "",
@@ -92,37 +92,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (post.mediaSrc !== "") {
       document.querySelector(".post-content").insertAdjacentHTML('beforeend', `<img class="post-image" src="${post.mediaSrc}" alt="Post Media">`);
-    }    
-  });
-
-  const hoverButtons = [
-    { id: 'comment-button', defaultSrc: 'img/comment-icon.png', hoverSrc: 'img/comment-icon-active.png' },
-    { id: 'repost-button', defaultSrc: 'img/repost-icon.png', hoverSrc: 'img/repost-icon-active.png' },
-    { id: 'like-button', defaultSrc: 'img/heart-icon.png', hoverSrc: 'img/heart-icon-active.png' },
-    { id: 'views-button', defaultSrc: 'img/views-icon.png', hoverSrc: 'img/views-icon-active.png' },
-    { id: 'bookmark-button', defaultSrc: 'img/bookmark-icon.png', hoverSrc: 'img/bookmark-icon-active.png' },
-    { id: 'share-button', defaultSrc: 'img/share-icon.png', hoverSrc: 'img/share-icon-active.png' },
-    { id: 'more-button', defaultSrc: 'img/more-addon-icon.png', hoverSrc: 'img/more-addon-icon-active.png' }
-  ];
-
-  hoverButtons.forEach(button => {
-    const buttonElement = document.getElementById(button.id);
-    const imgElement = buttonElement.querySelector('img');
-    
-    buttonElement.addEventListener('mouseenter', function() {
-      imgElement.src = button.hoverSrc;
-      const tooltip = buttonElement.querySelector('.more-addon-icon-tooltip');
-      if (tooltip) {
-        tooltip.style.display = 'block';
-      }
-    });
-
-    buttonElement.addEventListener('mouseleave', function() {
-      imgElement.src = button.defaultSrc;
-      const tooltip = buttonElement.querySelector('.more-addon-icon-tooltip');
-      if (tooltip) {
-        tooltip.style.display = 'none';
-      }
-    });
+    }
   });
 });

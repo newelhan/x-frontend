@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
   const postsData = [
     {
-      profilePic: "img/profile-picture.jpg",
-      displayname: "Ethan Welhan",
+      profilePic: "img/ig-profile.png",
+      displayname: "Strength Overall",
       statusicon: "img/verified-icon.png",
-      username: "@newelhan",
+      username: "@strength_overall",
       time: "1h",
       description: "#%^&@ !^&% (Please scroll here)",
       mediaSrc: "img/gatto.gif",
@@ -145,6 +145,30 @@ document.addEventListener("DOMContentLoaded", function() {
       `;
 
       postContainer.insertAdjacentHTML('beforeend', postHTML);
+
+      const postElement = postContainer.querySelector('.post:last-child');
+      const hoverButtons = [
+        { id: 'comment-button', defaultSrc: 'img/comment-icon.png', hoverSrc: 'img/comment-icon-active.png' },
+        { id: 'repost-button', defaultSrc: 'img/repost-icon.png', hoverSrc: 'img/repost-icon-active.png' },
+        { id: 'like-button', defaultSrc: 'img/heart-icon.png', hoverSrc: 'img/heart-icon-active.png' },
+        { id: 'views-button', defaultSrc: 'img/views-icon.png', hoverSrc: 'img/views-icon-active.png' },
+        { id: 'bookmark-button', defaultSrc: 'img/bookmark-icon.png', hoverSrc: 'img/bookmark-icon-active.png' },
+        { id: 'share-button', defaultSrc: 'img/share-icon.png', hoverSrc: 'img/share-icon-active.png' },
+        { id: 'more-button', defaultSrc: 'img/more-addon-icon.png', hoverSrc: 'img/more-addon-icon-active.png' }
+      ];
+
+      hoverButtons.forEach(button => {
+        const buttonElement = postElement.querySelector(`#${button.id}`);
+        const imgElement = buttonElement.querySelector('img');
+        
+        buttonElement.addEventListener('mouseenter', function() {
+          imgElement.src = button.hoverSrc;
+        });
+    
+        buttonElement.addEventListener('mouseleave', function() {
+          imgElement.src = button.defaultSrc;
+        });
+      });
     });
   }  
 
@@ -199,10 +223,10 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       const newPost = {
-        profilePic: "img/profile-picture.jpg",
-        displayname: "Ethan Welhan",
+        profilePic: "img/ig-profile.png",
+        displayname: "Strength Overall",
         statusicon: currentStatusIcon,
-        username: "@newelhan",
+        username: "@strength_overall",
         time: "Just now",
         description: postInput.value,
         mediaSrc: uploadedMediaSrc,
