@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
   const postsData = [
     {
-      profilePic: "img/ig-profile.png",
-      displayname: "Strength Overall",
+      profilePic: "img/profile-picture.jpg",
+      displayname: "newelhan",
       statusicon: "img/verified-icon.png",
-      username: "@strength_overall",
+      username: "@newelhan",
       time: "1h",
       description: "#%^&@ !^&% (Please scroll here)",
       mediaSrc: "img/gatto.gif",
@@ -223,10 +223,10 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       const newPost = {
-        profilePic: "img/ig-profile.png",
-        displayname: "Strength Overall",
+        profilePic: "img/profile-picture.jpg",
+        displayname: "newelhan",
         statusicon: currentStatusIcon,
-        username: "@strength_overall",
+        username: "@newelhan",
         time: "Just now",
         description: postInput.value,
         mediaSrc: uploadedMediaSrc,
