@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const postsData = [
     {
       profilePic: "img/profile-picture.jpg",
-      displayname: "Ethan Welhan",
+      displayname: "Twitter User",
       statusicon: "img/x-private.png",
-      username: "@newelhan",
+      username: "@twuser1",
       time: "1h",
       description: "",
       mediaSrc: "",

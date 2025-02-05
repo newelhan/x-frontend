@@ -21,19 +21,19 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener("DOMContentLoaded", function() {
   const trendsData = [
     {
-        category: "Health · Trending",
-        name: "Monkeypox Outbreak",
-        posts: "32.5K posts"
+        category: "Trending in Indonesia",
+        name: "Ray Warsudi",
+        posts: "11.2K posts"
     },
     {
-        category: "World News · Trending",
-        name: "Wildfire Crisis",
-        posts: "120K posts"
+        category: "Trending in Indonesia",
+        name: "Bekasi",
+        posts: "2,420 posts"
     },
     {
-        category: "Economy · Trending",
-        name: "Global Inflation",
-        posts: "90.7K posts"
+        category: "SDH-DM · Trending",
+        name: "Kelas Public Speaking",
+        posts: "1M posts"
     }
 ];
 

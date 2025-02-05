@@ -1,18 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
   const postsData = [
-    {
-      profilePic: "img/profile-picture.jpg",
-      displayname: "newelhan",
-      statusicon: "img/verified-icon.png",
-      username: "@newelhan",
-      time: "1h",
-      description: "#%^&@ !^&% (Please scroll here)",
-      mediaSrc: "img/gatto.gif",
-      likes: "9.4k",
-      reposts: "3.2k",
-      comments: "432",
-      views: "12.1k"
-    },
     // More posts can be added here
   ];
 
@@ -210,23 +197,23 @@ document.addEventListener("DOMContentLoaded", function() {
       if (visibilitySettings.textContent === "Everyone can reply") {
         currentStatusIcon = "img/verified-icon.png";
         views = getRandomNumber(200000, 1000000);
-        likes = getRandomNumber(50000, views - 1);
-        reposts = getRandomNumber(10000, likes - 1);
-        comments = getRandomNumber(200, reposts - 1);
+        likes = getRandomNumber(50000, views * 10/100);
+        reposts = getRandomNumber(10000, likes * 20/100);
+        comments = getRandomNumber(200, reposts * 20/100);
       }
       else {
         currentStatusIcon = "img/x-private.png";
         views = getRandomNumber(100, 1000);
-        likes = getRandomNumber(900, views - 1);
-        reposts = getRandomNumber(700, likes - 1);
-        comments = getRandomNumber(200, reposts - 1);
+        likes = getRandomNumber(900,  views * 10/100);
+        reposts = getRandomNumber(700,  likes * 20/100);
+        comments = getRandomNumber(200, reposts * 20/100);
       }
 
       const newPost = {
         profilePic: "img/profile-picture.jpg",
-        displayname: "newelhan",
+        displayname: "Twitter User",
         statusicon: currentStatusIcon,
-        username: "@newelhan",
+        username: "@twuser1",
         time: "Just now",
         description: postInput.value,
         mediaSrc: uploadedMediaSrc,

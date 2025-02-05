@@ -5,7 +5,7 @@ const navButtons = {
   notifications: 'https://x.com/notifications',
   messages: 'https://x.com/messages',
   grok: 'https://x.com/i/grok',
-  profile: 'https://x.com/newelhan',
+  profile: 'https://x.com/elonmusk',
   more: 'https://x.com/settings/account',
 };
 
