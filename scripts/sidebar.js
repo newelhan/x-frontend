@@ -21,18 +21,18 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener("DOMContentLoaded", function() {
   const trendsData = [
     {
-        category: "Trending in Indonesia",
-        name: "Ray Warsudi",
+        category: "Sports · Trending",
+        name: "Curling",
         posts: "11.2K posts"
     },
     {
-        category: "Trending in Indonesia",
-        name: "Bekasi",
+        category: "Food · Trending",
+        name: "Chicken Biryani",
         posts: "2,420 posts"
     },
     {
-        category: "SDH-DM · Trending",
-        name: "Kelas Public Speaking",
+        category: "Sports · Trending",
+        name: "Football",
         posts: "1M posts"
     }
 ];
